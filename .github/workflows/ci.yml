@@ -24,6 +24,11 @@ jobs:
     - name: Set PYTHONPATH
       run: echo "PYTHONPATH=$PWD" >> $GITHUB_ENV
 
+    - name: Lint Code
+      run: |
+        pip install flake8
+        flake8 .
+
     - name: Run Tests
       run: |
         pytest
